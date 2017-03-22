@@ -2,9 +2,9 @@ public abstract class OperateurUnaire implements Noeud {
     private String op;
     private Noeud opG;
 
-    OperateurUnaire(String s, Noeud nG, Noeud nD) {
+    OperateurUnaire(String s, Noeud n) {
         op = s;
-        opG = nG;
+        opG = n;
     }
 
     public String getOp() {
