@@ -1,4 +1,4 @@
-public interface Noeud {
-
-
+public interface Noeud
+{
+    void accept(Visitor visitor);
 }
