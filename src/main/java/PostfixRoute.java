@@ -3,7 +3,12 @@
  */
 public class PostfixRoute implements Visitor {
 
-    public void visitConstant(Constante constante) {
+
+    public void visitOperateurUnaire(OperateurUnaire opUnaire) {
+
+    }
+
+    public void visitOperateurBinaire(OperateurBinaire opBinaire) {
 
     }
 
@@ -11,11 +16,7 @@ public class PostfixRoute implements Visitor {
 
     }
 
-    public void visitNegation(Negation negation) {
-
-    }
-
-    public void visitAddition(Addition add) {
+    public void visitConstante(Constante constante) {
 
     }
 }

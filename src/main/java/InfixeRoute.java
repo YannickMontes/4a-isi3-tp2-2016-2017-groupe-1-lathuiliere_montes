@@ -4,7 +4,11 @@
 public class InfixeRoute implements Visitor {
 
 
-    public void visitConstant(Constante constante) {
+    public void visitOperateurUnaire(OperateurUnaire opUnaire) {
+        
+    }
+
+    public void visitOperateurBinaire(OperateurBinaire opBinaire) {
 
     }
 
@@ -12,12 +16,7 @@ public class InfixeRoute implements Visitor {
 
     }
 
-    public void visitNegation(Negation negation) {
+    public void visitConstante(Constante constante) {
 
     }
-
-    public void visitAddition(Addition add) {
-
-    }
-
 }
