@@ -29,7 +29,7 @@ public class ExpressionArithmetique {
     public void afficherInFixe() {
         System.out.println("\n infixe:");
         this.visitor = new InfixeRoute();
-        this.visitor.
+        this.racine.accept(this.visitor);
 
     }
 

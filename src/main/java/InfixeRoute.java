@@ -6,15 +6,15 @@ public class InfixeRoute implements Visitor {
 
     public void visitOperateurUnaire(OperateurUnaire opUnaire)
     {
-        System.out.println(opUnaire.getOpG());
+        opUnaire.getOpG().accept(this);
         System.out.println(opUnaire.getOp());
     }
 
     public void visitOperateurBinaire(OperateurBinaire opBinaire)
     {
-        System.out.println(opBinaire.getOpG());
+        opBinaire.getOpG().accept(this);
         System.out.println(opBinaire.getOp());
-        System.out.println(opBinaire.getOpD());
+        opBinaire.getOpD().accept(this);
     }
 
     public void visitConstante(Constante constante)

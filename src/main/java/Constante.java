@@ -9,7 +9,9 @@ public class Constante implements Noeud {
         return valeur;
     }
 
-    public void accept(Visitor visitor) {
+    public void accept(Visitor visitor)
+    {
+        visitor.visitConstante(this);
     }
 
 

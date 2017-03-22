@@ -3,7 +3,9 @@ public class Negation extends OperateurUnaire {
         super("-", n);
     }
 
-    public void accept(Visitor visitor) {
+    public void accept(Visitor visitor)
+    {
+        visitor.visitOperateurUnaire(this);
     }
 
 }
