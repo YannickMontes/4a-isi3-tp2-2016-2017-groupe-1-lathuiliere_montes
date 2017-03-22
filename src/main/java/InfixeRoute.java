@@ -21,4 +21,10 @@ public class InfixeRoute implements Visitor {
     {
         System.out.println(constante.getValeur());
     }
+
+    public void visitNegation(Negation neg)
+    {
+        System.out.println(neg.getOp());
+        neg.getOpG().accept(this);
+    }
 }

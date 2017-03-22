@@ -8,4 +8,5 @@ public interface Visitor {
 
     void visitConstante(Constante constante);
 
+    void visitNegation(Negation neg);
 }

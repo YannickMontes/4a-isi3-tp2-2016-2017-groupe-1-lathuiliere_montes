@@ -5,7 +5,7 @@ public class Negation extends OperateurUnaire {
 
     public void accept(Visitor visitor)
     {
-        visitor.visitOperateurUnaire(this);
+        visitor.visitNegation(this);
     }
 
 }

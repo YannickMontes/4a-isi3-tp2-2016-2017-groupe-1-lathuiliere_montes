@@ -15,4 +15,9 @@ public class PrefixRoute implements Visitor {
     public void visitConstante(Constante constante) {
 
     }
+
+    public void visitNegation(Negation neg)
+    {
+        
+    }
 }

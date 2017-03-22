@@ -17,4 +17,9 @@ public class PostfixRoute implements Visitor {
     public void visitConstante(Constante constante) {
         System.out.println(constante);
     }
+
+    public void visitNegation(Negation neg)
+    {
+
+    }
 }
