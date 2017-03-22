@@ -1,9 +1,8 @@
-public class Multiplication extends OperateurBinaire{
+public class Multiplication extends OperateurBinaire {
 
-	public Multiplication( Noeud ng, Noeud nd) {
-		super("*", ng, nd);
-	}
+    public Multiplication(Noeud ng, Noeud nd) {
+        super("*", ng, nd);
+    }
 
-	
 
 }
