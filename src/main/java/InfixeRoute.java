@@ -4,19 +4,26 @@
 public class InfixeRoute implements Visitor {
 
 
-    public void visitOperateurUnaire(OperateurUnaire opUnaire) {
-        
+    public void visitOperateurUnaire(OperateurUnaire opUnaire)
+    {
+        System.out.println(opUnaire.getOpG());
+        System.out.println(opUnaire.getOp());
     }
 
-    public void visitOperateurBinaire(OperateurBinaire opBinaire) {
-
+    public void visitOperateurBinaire(OperateurBinaire opBinaire)
+    {
+        System.out.println(opBinaire.getOpG());
+        System.out.println(opBinaire.getOp());
+        System.out.println(opBinaire.getOpD());
     }
 
-    public void visitMultiplication(Multiplication mul) {
-
+    public void visitMultiplication(Multiplication mul)
+    {
+        System.out.println("to remove");
     }
 
-    public void visitConstante(Constante constante) {
-
+    public void visitConstante(Constante constante)
+    {
+        System.out.println(constante.getValeur());
     }
 }
