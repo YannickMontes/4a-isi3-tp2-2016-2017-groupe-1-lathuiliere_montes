@@ -6,8 +6,6 @@ public interface Visitor {
 
     void visitOperateurBinaire(OperateurBinaire opBinaire);
 
-    void visitMultiplication(Multiplication mul);
-
     void visitConstante(Constante constante);
 
 }

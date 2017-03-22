@@ -12,10 +12,6 @@ public class PrefixRoute implements Visitor {
 
     }
 
-    public void visitMultiplication(Multiplication mul) {
-
-    }
-
     public void visitConstante(Constante constante) {
 
     }

@@ -14,10 +14,6 @@ public class PostfixRoute implements Visitor {
         System.out.println(opBinaire);
     }
 
-    public void visitMultiplication(Multiplication mul) {
-        System.out.println(mul);
-    }
-
     public void visitConstante(Constante constante) {
         System.out.println(constante);
     }

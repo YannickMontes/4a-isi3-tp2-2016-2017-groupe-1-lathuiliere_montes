@@ -17,11 +17,6 @@ public class InfixeRoute implements Visitor {
         System.out.println(opBinaire.getOpD());
     }
 
-    public void visitMultiplication(Multiplication mul)
-    {
-        System.out.println("to remove");
-    }
-
     public void visitConstante(Constante constante)
     {
         System.out.println(constante.getValeur());
