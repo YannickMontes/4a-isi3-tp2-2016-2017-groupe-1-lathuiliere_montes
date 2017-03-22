@@ -9,5 +9,8 @@ public class Constante implements Noeud {
         return valeur;
     }
 
+    public void accept(Visitor visitor) {
+    }
+
 
 }

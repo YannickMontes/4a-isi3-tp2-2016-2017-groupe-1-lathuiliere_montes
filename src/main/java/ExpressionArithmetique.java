@@ -1,5 +1,6 @@
-public class ExpressionArithmetique {
+public abstract class ExpressionArithmetique {
     private Noeud racine;
+    private Visitor visitor;
 
     public ExpressionArithmetique(Noeud racine) {
         this.racine = racine;
