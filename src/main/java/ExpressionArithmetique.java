@@ -1,4 +1,4 @@
-public abstract class ExpressionArithmetique {
+public class ExpressionArithmetique {
     private Noeud racine;
     private Visitor visitor;
 
@@ -28,7 +28,8 @@ public abstract class ExpressionArithmetique {
 
     public void afficherInFixe() {
         System.out.println("\n infixe:");
-        // TODO
+        this.visitor = new InfixeRoute();
+        this.visitor.
 
     }
 
