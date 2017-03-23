@@ -24,7 +24,7 @@ public class InfixeRoute implements Visitor {
 
     public void visitNegation(Negation neg)
     {
-        System.out.println(neg.getOp());
+        System.out.println(String.format("(%s)",neg.getOp()));
         neg.getOpG().accept(this);
     }
 }
