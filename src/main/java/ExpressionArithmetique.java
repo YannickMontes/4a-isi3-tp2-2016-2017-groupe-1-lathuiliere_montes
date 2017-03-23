@@ -12,8 +12,15 @@ public class ExpressionArithmetique {
 
     public void afficherPostFixe() {
         System.out.println("\n postfixe:");
-        // TODO
+        this.visitor = new PostfixRoute();
+        this.racine.accept(this.visitor);
+    }
 
+    public void afficherPreFixe()
+    {
+        System.out.println("\n Prefix route:");
+        this.visitor = new PrefixRoute();
+        this.racine.accept(this.visitor);
     }
 
     public int calculerValeur() {
@@ -30,7 +37,6 @@ public class ExpressionArithmetique {
         System.out.println("\n infixe:");
         this.visitor = new InfixeRoute();
         this.racine.accept(this.visitor);
-
     }
 
 }
