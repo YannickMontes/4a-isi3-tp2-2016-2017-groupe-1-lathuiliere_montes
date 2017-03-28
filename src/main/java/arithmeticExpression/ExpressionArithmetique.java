@@ -36,8 +36,10 @@ public class ExpressionArithmetique {
     }
 
     public int calculerHauteur() {
-        // TODO
-        return 0;
+        this.visitor = new VisitorExpressionHeight();
+        this.racine.accept(this.visitor);
+
+        return ((VisitorExpressionHeight) this.visitor).getHeight();
     }
 
     public void afficherInFixe() {
