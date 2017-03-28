@@ -1,10 +1,7 @@
 package arithmeticExpression;
 
 import tree.Noeud;
-import visitor.InfixeRoute;
-import visitor.PostfixRoute;
-import visitor.PrefixRoute;
-import visitor.Visitor;
+import visitor.*;
 
 public class ExpressionArithmetique {
     private Noeud racine;
@@ -32,8 +29,10 @@ public class ExpressionArithmetique {
     }
 
     public int calculerValeur() {
-        // TODO
-        return 0;
+        this.visitor = new VisitorCalculateExpression();
+        this.racine.accept(this.visitor);
+
+        return ((VisitorCalculateExpression) this.visitor).getResult();
     }
 
     public int calculerHauteur() {

@@ -1,37 +1,45 @@
 package visitor;
 
-import tree.Constante;
-import tree.Negation;
-import tree.OperateurUnaire;
-import tree.OperateurBinaire;
+import tree.*;
 
 /**
  * Created by yannick on 22/03/17.
  */
 public class VisitorCalculateExpression implements Visitor {
+    private int result = 0;
 
+    public int getResult() {
+        return this.result;
+    }
 
     public void visitOperateurUnaire(OperateurUnaire opUnaire)
     {
-        System.out.println(opUnaire.getOp());
-        opUnaire.getOpG().accept(this);
+        throw new UnsupportedOperationException();
     }
 
     public void visitOperateurBinaire(OperateurBinaire opBinaire)
     {
-        System.out.println(opBinaire.getOp());
-        opBinaire.getOpG().accept(this);
-        opBinaire.getOpD().accept(this);
+        VisitorCalculateExpression calculatorLeft = new VisitorCalculateExpression();
+        VisitorCalculateExpression calculatorRight = new VisitorCalculateExpression();
+        opBinaire.getOpG().accept(calculatorLeft);
+        opBinaire.getOpD().accept(calculatorRight);
+
+        if(opBinaire instanceof Addition) {
+            this.result += calculatorLeft.getResult() + calculatorRight.getResult();
+        } else { // Multiplication
+            this.result += calculatorLeft.getResult() * calculatorRight.getResult();
+        }
     }
 
     public void visitConstante(Constante constante)
     {
-        System.out.println(constante.getValeur());
+        this.result += constante.getValeur();
     }
 
     public void visitNegation(Negation neg)
     {
-        System.out.println(neg.getOp());
-        neg.getOpG().accept(this);
+        VisitorCalculateExpression calculatorLeft = new VisitorCalculateExpression();
+        neg.getOpG().accept(calculatorLeft);
+        this.result += -calculatorLeft.getResult();
     }
 }
