@@ -1,3 +1,5 @@
+package tree;
+
 public abstract class OperateurBinaire extends OperateurUnaire {
 
     private Noeud opD;

@@ -1,19 +1,26 @@
+package visitor;
+
+import tree.Constante;
+import tree.Negation;
+import tree.OperateurUnaire;
+import tree.OperateurBinaire;
+
 /**
  * Created by yannick on 22/03/17.
  */
-public class InfixeRoute implements Visitor {
+public class PrefixRoute implements Visitor {
 
 
     public void visitOperateurUnaire(OperateurUnaire opUnaire)
     {
-        opUnaire.getOpG().accept(this);
         System.out.println(opUnaire.getOp());
+        opUnaire.getOpG().accept(this);
     }
 
     public void visitOperateurBinaire(OperateurBinaire opBinaire)
     {
-        opBinaire.getOpG().accept(this);
         System.out.println(opBinaire.getOp());
+        opBinaire.getOpG().accept(this);
         opBinaire.getOpD().accept(this);
     }
 
@@ -24,7 +31,7 @@ public class InfixeRoute implements Visitor {
 
     public void visitNegation(Negation neg)
     {
-        System.out.println(String.format("(%s)",neg.getOp()));
+        System.out.println(neg.getOp());
         neg.getOpG().accept(this);
     }
 }

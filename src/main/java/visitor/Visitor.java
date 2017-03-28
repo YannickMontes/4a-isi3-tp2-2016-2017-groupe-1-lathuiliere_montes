@@ -1,3 +1,10 @@
+package visitor;
+
+import tree.OperateurBinaire;
+import tree.Negation;
+import tree.OperateurUnaire;
+import tree.Constante;
+
 /**
  * Created by yannick on 22/03/17.
  */

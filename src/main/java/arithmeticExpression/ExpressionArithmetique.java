@@ -1,3 +1,11 @@
+package arithmeticExpression;
+
+import tree.Noeud;
+import visitor.InfixeRoute;
+import visitor.PostfixRoute;
+import visitor.PrefixRoute;
+import visitor.Visitor;
+
 public class ExpressionArithmetique {
     private Noeud racine;
     private Visitor visitor;

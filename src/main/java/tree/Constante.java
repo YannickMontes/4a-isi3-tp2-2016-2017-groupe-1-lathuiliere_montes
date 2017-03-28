@@ -1,3 +1,7 @@
+package tree;
+
+import visitor.Visitor;
+
 public class Constante implements Noeud {
     private int valeur;
 
