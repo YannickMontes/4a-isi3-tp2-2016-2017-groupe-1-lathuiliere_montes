@@ -14,24 +14,24 @@ public class PostfixRoute implements Visitor {
     public void visitOperateurUnaire(OperateurUnaire opUnaire)
     {
         opUnaire.getOpG().accept(this);
-        System.out.println(opUnaire.getOp());
+        System.out.print(opUnaire.getOp());
     }
 
     public void visitOperateurBinaire(OperateurBinaire opBinaire)
     {
         opBinaire.getOpG().accept(this);
         opBinaire.getOpD().accept(this);
-        System.out.println(opBinaire.getOp());
+        System.out.print(opBinaire.getOp());
     }
 
     public void visitConstante(Constante constante)
     {
-        System.out.println(constante.getValeur());
+        System.out.print(constante.getValeur());
     }
 
     public void visitNegation(Negation neg)
     {
         neg.getOpG().accept(this);
-        System.out.println(neg.getOp());
+        System.out.print(neg.getOp());
     }
 }

@@ -13,25 +13,25 @@ public class PrefixRoute implements Visitor {
 
     public void visitOperateurUnaire(OperateurUnaire opUnaire)
     {
-        System.out.println(opUnaire.getOp());
+        System.out.print(opUnaire.getOp());
         opUnaire.getOpG().accept(this);
     }
 
     public void visitOperateurBinaire(OperateurBinaire opBinaire)
     {
-        System.out.println(opBinaire.getOp());
+        System.out.print(opBinaire.getOp());
         opBinaire.getOpG().accept(this);
         opBinaire.getOpD().accept(this);
     }
 
     public void visitConstante(Constante constante)
     {
-        System.out.println(constante.getValeur());
+        System.out.print(constante.getValeur());
     }
 
     public void visitNegation(Negation neg)
     {
-        System.out.println(neg.getOp());
+        System.out.print(neg.getOp());
         neg.getOpG().accept(this);
     }
 }

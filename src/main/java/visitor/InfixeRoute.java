@@ -1,9 +1,6 @@
 package visitor;
 
-import tree.Constante;
-import tree.Negation;
-import tree.OperateurUnaire;
-import tree.OperateurBinaire;
+import tree.*;
 
 /**
  * Created by yannick on 22/03/17.
@@ -14,24 +11,31 @@ public class InfixeRoute implements Visitor {
     public void visitOperateurUnaire(OperateurUnaire opUnaire)
     {
         opUnaire.getOpG().accept(this);
-        System.out.println(opUnaire.getOp());
+        System.out.print(opUnaire.getOp());
     }
 
     public void visitOperateurBinaire(OperateurBinaire opBinaire)
     {
+        if(opBinaire instanceof Multiplication) {
+            System.out.print("(");
+        }
         opBinaire.getOpG().accept(this);
-        System.out.println(opBinaire.getOp());
+        System.out.print(opBinaire.getOp());
         opBinaire.getOpD().accept(this);
+        if(opBinaire instanceof Multiplication) {
+            System.out.print(")");
+        }
     }
 
     public void visitConstante(Constante constante)
     {
-        System.out.println(constante.getValeur());
+        System.out.print(constante.getValeur());
     }
 
     public void visitNegation(Negation neg)
     {
-        System.out.println(String.format("(%s)",neg.getOp()));
+        System.out.print(String.format("(%s",neg.getOp()));
         neg.getOpG().accept(this);
+        System.out.print(")");
     }
 }
