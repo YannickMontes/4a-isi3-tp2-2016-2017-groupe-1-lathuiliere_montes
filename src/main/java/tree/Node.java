@@ -2,7 +2,7 @@ package tree;
 
 import visitor.Visitor;
 
-public interface Noeud
+public interface Node
 {
     void accept(Visitor visitor);
 }

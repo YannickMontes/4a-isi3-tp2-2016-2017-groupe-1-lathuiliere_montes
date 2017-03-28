@@ -1,19 +1,20 @@
 package visitor;
 
-import tree.OperateurBinaire;
+import tree.BinaryOperator;
 import tree.Negation;
-import tree.OperateurUnaire;
-import tree.Constante;
+import tree.UnaryOperator;
+import tree.Constant;
 
 /**
  * Created by yannick on 22/03/17.
  */
-public interface Visitor {
-    void visitOperateurUnaire(OperateurUnaire opUnaire);
+public interface Visitor 
+{
+    void visitUnaryOperator(UnaryOperator unaryOp);
 
-    void visitOperateurBinaire(OperateurBinaire opBinaire);
+    void visitBinarOperator(BinaryOperator binaryOp);
 
-    void visitConstante(Constante constante);
+    void visitConstant(Constant constantOperator);
 
-    void visitNegation(Negation neg);
+    void visitNegation(Negation negationOperator);
 }

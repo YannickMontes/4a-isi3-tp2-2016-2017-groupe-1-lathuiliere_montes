@@ -2,8 +2,10 @@ package tree;
 
 import visitor.Visitor;
 
-public class Negation extends OperateurUnaire {
-    public Negation(Noeud n) {
+public class Negation extends UnaryOperator 
+{
+    public Negation(Node n) 
+    {
         super("-", n);
     }
 
@@ -11,5 +13,4 @@ public class Negation extends OperateurUnaire {
     {
         visitor.visitNegation(this);
     }
-
 }
