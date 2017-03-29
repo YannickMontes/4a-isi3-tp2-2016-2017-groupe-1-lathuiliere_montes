@@ -92,7 +92,7 @@ public int getResult()
 {
     return this.result;
 }
-````
+`````
 
 - Dans le cas de la visite d'une opération binaire, on va chercher en premier à calculer le résultat du noeud gauche (et de ses potentiels fils) pour l'ajouter ou le multiplier avec le résultat du noeud droit (et de ses potentiels fils).
 
@@ -125,7 +125,7 @@ public void visitNegation(Negation negation)
     negation.getLeftOperator().accept(calculatorLeft);
     this.result += -calculatorLeft.getResult();
 }
-````
+`````
 
 Pour afficher le résultat d'une opération, on appelera simplement le visiteur créé sur la racine de notre expression et on retournera le résultat grâce à la méthode "getResult()".
 `````
@@ -144,7 +144,7 @@ public int getHeight()
 {
     return this.height;
 }
-````
+`````
 
 - Dans le cas d'une opération unaire, on va calculer la hauteur de son noeud gauche (sous-arbre) et y ajouter 1.
 
@@ -227,4 +227,4 @@ public void visitNegation(Negation negation)
     negation.getLeftOperator().accept(this);
     System.out.print(")");
 }
-````
+`````
