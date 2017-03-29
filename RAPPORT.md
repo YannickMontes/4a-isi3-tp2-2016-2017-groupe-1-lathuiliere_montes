@@ -192,7 +192,7 @@ return ((VisitorComputeHeightTree) this.visitor).getHeight();
 ## Question 6
 Le dernier parcours implémente, infixe, se base sur le même principe que les deux autres parcours. L'ordre est juste changé, on visitera d'abord la partie gauche d’un noeud, puis sa partie droite du noeud et enfin le noeud en lui-même.
 
-Pour gérer les priorités, on ajoutera simplement une parenthèse dans le cas d'une opération binaire (multiplication) ou d'une négation.
+Pour gérer les priorités, on ajoutera simplement des parenthèses dans les opérations binaires et les négations.
 
 
 `````
