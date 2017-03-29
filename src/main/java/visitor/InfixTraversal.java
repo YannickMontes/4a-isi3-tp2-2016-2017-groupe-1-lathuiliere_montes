@@ -15,16 +15,11 @@ public class InfixTraversal implements Visitor
 
     public void visitBinarOperator(BinaryOperator binaryOperator)
     {
-        if(binaryOperator instanceof Multiplication) 
-        {
-            System.out.print("(");
-        }
+        System.out.print("(");
         binaryOperator.getLeftOperator().accept(this);
         System.out.print(binaryOperator.getOperator());
         binaryOperator.getRightOperator().accept(this);
-        if(binaryOperator instanceof Multiplication) {
-            System.out.print(")");
-        }
+        System.out.print(")");
     }
 
     public void visitConstant(Constant constant)
