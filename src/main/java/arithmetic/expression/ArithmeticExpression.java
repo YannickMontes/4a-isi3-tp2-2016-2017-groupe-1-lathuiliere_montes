@@ -1,4 +1,4 @@
-package arithmeticExpression;
+package arithmetic.expression;
 
 import visitor.*;
 import tree.Node;

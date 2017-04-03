@@ -1,4 +1,4 @@
-import arithmeticExpression.ArithmeticExpression;
+import arithmetic.expression.ArithmeticExpression;
 import tree.Addition;
 import tree.Constant;
 import tree.Multiplication;
