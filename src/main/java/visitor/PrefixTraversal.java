@@ -1,9 +1,6 @@
 package visitor;
 
-import tree.Constant;
-import tree.Negation;
-import tree.UnaryOperator;
-import tree.BinaryOperator;
+import tree.*;
 
 /**
  * Created by yannick on 22/03/17.
@@ -16,11 +13,21 @@ public class PrefixTraversal implements Visitor
         unaryOperator.getLeftOperator().accept(this);
     }
 
-    public void visitBinarOperator(BinaryOperator binaryOperator)
+    private void visitBinaryOperator(BinaryOperator binaryOperator)
     {
         System.out.print(binaryOperator.getOperator());
         binaryOperator.getLeftOperator().accept(this);
         binaryOperator.getRightOperator().accept(this);
+    }
+
+    public void visitMultiplication(Multiplication multiplication)
+    {
+        this.visitBinaryOperator(multiplication);
+    }
+
+    public void visitAddition(Addition addition)
+    {
+        this.visitBinaryOperator(addition);
     }
 
     public void visitConstant(Constant constant)

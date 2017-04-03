@@ -13,13 +13,23 @@ public class InfixTraversal implements Visitor
         System.out.print(unaryOperator.getOperator());
     }
 
-    public void visitBinarOperator(BinaryOperator binaryOperator)
+    private void visitBinaryOperator(BinaryOperator binaryOperator)
     {
         System.out.print("(");
         binaryOperator.getLeftOperator().accept(this);
         System.out.print(binaryOperator.getOperator());
         binaryOperator.getRightOperator().accept(this);
         System.out.print(")");
+    }
+
+    public void visitMultiplication(Multiplication multiplication)
+    {
+        this.visitBinaryOperator(multiplication);
+    }
+
+    public void visitAddition(Addition addition)
+    {
+        this.visitBinaryOperator(addition);
     }
 
     public void visitConstant(Constant constant)

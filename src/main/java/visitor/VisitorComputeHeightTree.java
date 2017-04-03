@@ -23,7 +23,7 @@ public class VisitorComputeHeightTree implements Visitor
         this.height += visitorLeft.getHeight() + 1;
     }
 
-    public void visitBinarOperator(BinaryOperator binaryOperator)
+    private void visitBinaryOperator(BinaryOperator binaryOperator)
     {
         VisitorComputeHeightTree visitorLeft = new VisitorComputeHeightTree();
         VisitorComputeHeightTree visitorRight = new VisitorComputeHeightTree();
@@ -32,6 +32,16 @@ public class VisitorComputeHeightTree implements Visitor
         binaryOperator.getRightOperator().accept(visitorRight);
 
         this.height += Math.max(visitorLeft.getHeight(), visitorRight.getHeight()) + 1;
+    }
+
+    public void visitMultiplication(Multiplication multiplication)
+    {
+        this.visitBinaryOperator(multiplication);
+    }
+
+    public void visitAddition(Addition addition)
+    {
+        this.visitBinaryOperator(addition);
     }
 
     public void visitConstant(Constant constant)

@@ -11,6 +11,6 @@ public class Addition extends BinaryOperator
 
     public void accept(Visitor visitor)
     {
-        visitor.visitBinarOperator(this);
+        visitor.visitAddition(this);
     }
 }

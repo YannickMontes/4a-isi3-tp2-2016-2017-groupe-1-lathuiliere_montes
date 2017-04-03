@@ -19,18 +19,24 @@ public class VisitorComputeArithmeticExpression implements Visitor
         throw new UnsupportedOperationException();
     }
 
-    public void visitBinarOperator(BinaryOperator binaryOperator)
+    public void visitMultiplication(Multiplication multiplication)
     {
         VisitorComputeArithmeticExpression calculatorLeft = new VisitorComputeArithmeticExpression();
         VisitorComputeArithmeticExpression calculatorRight = new VisitorComputeArithmeticExpression();
-        binaryOperator.getLeftOperator().accept(calculatorLeft);
-        binaryOperator.getRightOperator().accept(calculatorRight);
+        multiplication.getLeftOperator().accept(calculatorLeft);
+        multiplication.getRightOperator().accept(calculatorRight);
 
-        if(binaryOperator instanceof Addition) {
-            this.result += calculatorLeft.getResult() + calculatorRight.getResult();
-        } else { // Multiplication
-            this.result += calculatorLeft.getResult() * calculatorRight.getResult();
-        }
+        this.result += calculatorLeft.getResult() * calculatorRight.getResult();
+    }
+
+    public void visitAddition(Addition addition)
+    {
+        VisitorComputeArithmeticExpression calculatorLeft = new VisitorComputeArithmeticExpression();
+        VisitorComputeArithmeticExpression calculatorRight = new VisitorComputeArithmeticExpression();
+        addition.getLeftOperator().accept(calculatorLeft);
+        addition.getRightOperator().accept(calculatorRight);
+
+        this.result += calculatorLeft.getResult() + calculatorRight.getResult();
     }
 
     public void visitConstant(Constant constant)

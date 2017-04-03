@@ -11,6 +11,6 @@ public class Multiplication extends BinaryOperator
 
     public void accept(Visitor visitor)
     {
-        visitor.visitBinarOperator(this);
+        visitor.visitMultiplication(this);
     }
 }
